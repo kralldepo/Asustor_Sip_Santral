@@ -1,0 +1,44 @@
+{
+   "general": {
+      "package": "sipsantral",
+      "name": "SIP Santral",
+      "version": "__VERSION__",
+      "depends": [],
+      "conflicts": [],
+      "developer": "SIP Santral",
+      "maintainer": "SIP Santral",
+      "email": "",
+      "website": "",
+      "architecture": "__ARCH__",
+      "firmware": "4.0.0"
+   },
+   "adm-desktop": {
+      "app": {
+         "type": "custom",
+         "protocol": "https",
+         "port": 9490,
+         "url": "/"
+      },
+      "privilege": {
+         "accessible": "administrators",
+         "customizable": true
+      }
+   },
+   "register": {
+      "share-folder": [
+         {
+            "name": "SipKayitlari",
+            "description": "SIP Santral: gelen arama ses kayıtları"
+         }
+      ],
+      "port": [9490, 5060],
+      "boot-priority": {
+         "start-order": 90,
+         "stop-order": 10
+      },
+      "prerequisites": {
+         "enable-service": [],
+         "restart-service": []
+      }
+   }
+}

@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 656" width="1100" height="656" role="img" aria-labelledby="title desc">
+  <title id="title">Incoming call flow</title>
+  <desc id="desc">Each line uses one of four modes: Ring, Announcement + Ring, Announcement only, Ring then busy. If nobody answers: hang up, send busy, play a prompt or take a voicemail. Answered calls are recorded.</desc>
+  <style>
+    :root { --bg:#ffffff; --box:#ffffff; --bd:#d6deea; --tx:#1b2232; --mu:#5f6a80; --ar:#8390a8;
+            --pr:#2559c7; --prw:#e9f0ff; --in:#4338ca; --inw:#eef0ff; --am:#9a6108; --amw:#fdf2dd;
+            --pu:#5b3ba6; --puw:#f1ecfb; --ok:#0f7a4a; --okw:#e2f5eb; --re:#c42b2b; --rew:#fde9e9; --chip:#eef1f6; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0e131c; --box:#172131; --bd:#2a3650; --tx:#e4e9f2; --mu:#9aa6bc; --ar:#71809c;
+              --pr:#7fa6ff; --prw:#1c2945; --in:#a5b4fc; --inw:#1f2347; --am:#e3a843; --amw:#33260d;
+              --pu:#b9a2ff; --puw:#251c3d; --ok:#3ccb84; --okw:#12301f; --re:#ff7676; --rew:#3a1717; --chip:#222c3d; }
+    }
+    text { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; fill: var(--tx); }
+    .card { fill: var(--bg); stroke: var(--bd); }
+    .box { fill: var(--box); stroke: var(--bd); stroke-width: 1.3; }
+    .h1 { font-size: 25px; font-weight: 800; }
+    .sub { font-size: 16px; fill: var(--mu); }
+    .bt { font-size: 17px; font-weight: 700; }
+    .bs { font-size: 14.5px; fill: var(--mu); }
+    .c { text-anchor: middle; }
+    .ar { fill: none; stroke: var(--ar); stroke-width: 2.2; }
+    .ah { fill: var(--ar); }
+    .yn { font-size: 13.5px; font-weight: 700; fill: var(--mu); }
+    .mode { font-size: 15px; font-weight: 800; text-anchor: middle; }
+    .chip { fill: var(--chip); }
+    .ct { font-size: 13.5px; font-weight: 600; text-anchor: middle; }
+    .k-pr { fill: var(--prw); } .x-pr { fill: var(--pr); } .s-pr { stroke: var(--pr); }
+    .k-in { fill: var(--inw); } .x-in { fill: var(--in); } .s-in { stroke: var(--in); }
+    .k-am { fill: var(--amw); } .x-am { fill: var(--am); } .s-am { stroke: var(--am); }
+    .k-pu { fill: var(--puw); } .x-pu { fill: var(--pu); } .s-pu { stroke: var(--pu); }
+    .k-ok { fill: var(--okw); } .x-ok { fill: var(--ok); } .s-ok { stroke: var(--ok); }
+    .k-re { fill: var(--rew); } .x-re { fill: var(--re); }
+    .top { stroke-width: 3; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="ah" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+
+  <rect class="card" x="1" y="1" width="1098" height="654" rx="22"/>
+  <text class="h1" x="36" y="54">Incoming call flow</text>
+  <text class="sub" x="36" y="82">Each line has its own mode; when a rule changes, the panel reloads Asterisk by itself.</text>
+
+  <!-- start -->
+  <rect class="k-pr" x="420" y="100" width="260" height="46" rx="23"/>
+  <g transform="translate(442 111)" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="s-pr">
+    <path d="M16 2l-6 6M10 3v5h5"/>
+    <path d="M21 16.5v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.5 5.2 2 2 0 0 1 4.5 3h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.5 10.7a16 16 0 0 0 4.8 4.8l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" transform="translate(0 0) scale(.82) translate(2 4)"/>
+  </g>
+  <text class="bt" x="560" y="129" text-anchor="middle" style="font-size:16px">Incoming call → line</text>
+
+  <!-- bus -->
+  <path class="ar" d="M550 146V172M145 172H955"/>
+  <path class="ar" d="M145 172V196" marker-end="url(#ah)"/>
+  <path class="ar" d="M415 172V196" marker-end="url(#ah)"/>
+  <path class="ar" d="M685 172V196" marker-end="url(#ah)"/>
+  <path class="ar" d="M955 172V196" marker-end="url(#ah)"/>
+
+  <!-- mode cards -->
+  <g>
+    <rect class="box" x="25" y="200" width="240" height="118" rx="14"/>
+    <path class="s-pr top" d="M39 201.5H251"/>
+    <rect class="k-pr" x="45" y="216" width="200" height="30" rx="15"/>
+    <text class="mode x-pr" x="145" y="236.5">Ring</text>
+    <text class="bs c" x="145" y="276">Selected extensions</text>
+    <text class="bs c" x="145" y="298">ring at the same time</text>
+  </g>
+  <g>
+    <rect class="box" x="295" y="200" width="240" height="118" rx="14"/>
+    <path class="s-in top" d="M309 201.5H521"/>
+    <rect class="k-in" x="315" y="216" width="200" height="30" rx="15"/>
+    <text class="mode x-in" x="415" y="236.5">Announcement + Ring</text>
+    <text class="bs c" x="415" y="276">Plays an announcement,</text>
+    <text class="bs c" x="415" y="298">then rings the extensions</text>
+  </g>
+  <g>
+    <rect class="box" x="565" y="200" width="240" height="118" rx="14"/>
+    <path class="s-am top" d="M579 201.5H791"/>
+    <rect class="k-am" x="585" y="216" width="200" height="30" rx="15"/>
+    <text class="mode x-am" x="685" y="236.5">Announcement only</text>
+    <text class="bs c" x="685" y="276">No phone rings,</text>
+    <text class="bs c" x="685" y="298">the caller hears the prompt</text>
+  </g>
+  <g>
+    <rect class="box" x="835" y="200" width="240" height="118" rx="14"/>
+    <path class="s-pu top" d="M849 201.5H1061"/>
+    <rect class="k-pu" x="855" y="216" width="200" height="30" rx="15"/>
+    <text class="mode x-pu" x="955" y="236.5">Ring then busy</text>
+    <text class="bs c" x="955" y="276">Caller hears ringback,</text>
+    <text class="bs c" x="955" y="298">then gets busy</text>
+  </g>
+
+  <!-- ring / annring: decision -->
+  <path class="ar" d="M145 318V338H415V318M280 338V350"/>
+  <path class="k-pr" d="M188 380L280 352L372 380L280 408Z" style="stroke:var(--pr);stroke-width:1.5"/>
+  <text class="yn" x="280" y="385" text-anchor="middle" style="fill:var(--tx)">Answered?</text>
+  <path class="ar" d="M188 380H145V426" marker-end="url(#ah)"/>
+  <path class="ar" d="M372 380H415V426" marker-end="url(#ah)"/>
+  <text class="yn" x="155" y="372">Yes</text>
+  <text class="yn" x="380" y="372">No</text>
+
+  <!-- yes -->
+  <rect class="box" x="25" y="430" width="240" height="96" rx="14"/>
+  <circle class="k-ok" cx="57" cy="462" r="16"/>
+  <path d="M49.5 462.5l5 5 9.5-10" fill="none" class="s-ok" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="bt" x="84" y="468">Conversation</text>
+  <text class="bs" x="43" y="503">Connected to the extension</text>
+
+  <!-- no answer -->
+  <rect class="box" x="295" y="430" width="240" height="132" rx="14"/>
+  <text class="bt" x="313" y="459">Nobody answers</text>
+  <text class="bs" x="313" y="481">after the ring time:</text>
+  <rect class="chip" x="313" y="494" width="96" height="26" rx="13"/><text class="ct" x="361" y="512">Hang up</text>
+  <rect class="chip" x="417" y="494" width="102" height="26" rx="13"/><text class="ct" x="468" y="512">Send busy</text>
+  <rect class="chip" x="313" y="526" width="96" height="26" rx="13"/><text class="ct" x="361" y="544">Play prompt</text>
+  <rect class="chip" x="417" y="526" width="102" height="26" rx="13"/><text class="ct" x="468" y="544">Voicemail</text>
+
+  <!-- announcement only -->
+  <path class="ar" d="M685 318V426" marker-end="url(#ah)"/>
+  <rect class="box" x="565" y="430" width="240" height="132" rx="14"/>
+  <text class="bt" x="583" y="459">After the prompt</text>
+  <rect class="chip" x="583" y="474" width="96" height="26" rx="13"/><text class="ct" x="631" y="492">Hang up</text>
+  <text class="bs" x="690" y="492">or</text>
+  <rect class="chip" x="583" y="508" width="112" height="26" rx="13"/><text class="ct" x="639" y="526">Voicemail</text>
+  <text class="bs" x="583" y="552" style="font-size:13px">after the beep, time-limited</text>
+
+  <!-- busy -->
+  <path class="ar" d="M955 318V426" marker-end="url(#ah)"/>
+  <rect class="box" x="835" y="430" width="240" height="132" rx="14"/>
+  <text class="bt" x="853" y="459">Busy (486)</text>
+  <text class="bs" x="853" y="485">Default ring time 30 s</text>
+  <text class="bs" x="853" y="509">Default for new lines</text>
+  <text class="bs" x="853" y="533">Nothing is recorded</text>
+
+  <!-- recording bar -->
+  <rect class="k-re" x="25" y="586" width="1050" height="46" rx="23"/>
+  <circle class="x-re" cx="51" cy="609" r="7"/>
+  <text x="70" y="614" style="font-size:15px;font-weight:600">Every answered call is recorded in full → SipKayitlari/&lt;Line&gt;/&lt;Year&gt;/&lt;Month&gt;/&lt;Day&gt;/ · MP3 or WAV</text>
+</svg>

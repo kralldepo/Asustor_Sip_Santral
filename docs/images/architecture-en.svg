@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="1100" height="620" role="img" aria-labelledby="title desc">
+  <title id="title">SIP Santral architecture</title>
+  <desc id="desc">The browser connects to the panel over HTTPS 9490. The panel talks to Asterisk 22 over AMI. Asterisk connects to the SIP provider and the extensions via SIP/RTP and writes recordings to the SipKayitlari folder.</desc>
+  <style>
+    :root { --bg:#ffffff; --frame:#f4f7fc; --fbd:#c3cee0; --box:#ffffff; --bd:#d6deea; --tx:#1b2232; --mu:#5f6a80;
+            --pr:#2559c7; --prw:#e9f0ff; --ok:#0f7a4a; --okw:#e2f5eb; --re:#c42b2b; --rew:#fde9e9; --am:#9a6108; --amw:#fdf2dd; --ar:#8390a8; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0e131c; --frame:#121a28; --fbd:#33415c; --box:#172131; --bd:#2a3650; --tx:#e4e9f2; --mu:#9aa6bc;
+              --pr:#7fa6ff; --prw:#1c2945; --ok:#3ccb84; --okw:#12301f; --re:#ff7676; --rew:#3a1717; --am:#e3a843; --amw:#33260d; --ar:#71809c; }
+    }
+    text { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; fill: var(--tx); }
+    .card { fill: var(--bg); stroke: var(--bd); }
+    .frame { fill: var(--frame); stroke: var(--fbd); stroke-dasharray: 7 6; stroke-width: 1.5; }
+    .box { fill: var(--box); stroke: var(--bd); stroke-width: 1.3; }
+    .box-pr { fill: var(--box); stroke: var(--pr); stroke-width: 2; }
+    .h1 { font-size: 25px; font-weight: 800; }
+    .sub { font-size: 16px; fill: var(--mu); }
+    .lab { font-size: 13px; font-weight: 700; letter-spacing: 1.2px; fill: var(--mu); }
+    .bt { font-size: 18px; font-weight: 700; }
+    .bs { font-size: 14.5px; fill: var(--mu); }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13.5px; fill: var(--mu); }
+    .al { font-size: 13.5px; font-weight: 600; fill: var(--mu); }
+    .ar { fill: none; stroke: var(--ar); stroke-width: 2.2; }
+    .ah { fill: var(--ar); }
+    .ic { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .t-pr { fill: var(--prw); } .i-pr { stroke: var(--pr); }
+    .t-ok { fill: var(--okw); } .i-ok { stroke: var(--ok); }
+    .t-re { fill: var(--rew); } .i-re { stroke: var(--re); }
+    .t-am { fill: var(--amw); } .i-am { stroke: var(--am); }
+    .pill { fill: var(--amw); }
+    .pt { font-size: 13px; font-weight: 700; fill: var(--am); text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="ah" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+
+  <rect class="card" x="1" y="1" width="1098" height="618" rx="22"/>
+  <text class="h1" x="36" y="54">Architecture</text>
+  <text class="sub" x="36" y="82">One APK: a panel written in Go + Asterisk 22 in a chroot — no Docker needed</text>
+
+  <!-- NAS frame -->
+  <rect class="frame" x="310" y="108" width="460" height="488" rx="18"/>
+  <text class="lab" x="334" y="135">ASUSTOR NAS · ADM 4.0+</text>
+
+  <!-- browser -->
+  <rect class="box" x="30" y="160" width="220" height="90" rx="14"/>
+  <rect class="t-pr" x="46" y="185" width="40" height="40" rx="10"/>
+  <g class="ic i-pr" transform="translate(54 193)"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></g>
+  <text class="bt" x="100" y="200">Browser</text>
+  <text class="bs" x="100" y="224">Admin panel</text>
+
+  <!-- panel -->
+  <rect class="box-pr" x="340" y="150" width="400" height="110" rx="14"/>
+  <rect class="t-pr" x="356" y="168" width="40" height="40" rx="10"/>
+  <g class="ic i-pr" transform="translate(364 176)"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></g>
+  <text class="bt" x="410" y="186">SIP Santral panel</text>
+  <text class="bs" x="410" y="211">Go · single binary · HTTPS :9490</text>
+  <text class="bs" x="410" y="235">Settings, call history, prompts → var/</text>
+
+  <!-- ports -->
+  <rect class="box" x="850" y="150" width="220" height="110" rx="14"/>
+  <text class="bt" x="870" y="180" style="font-size:16px">Ports</text>
+  <text class="mono" x="870" y="206">5060 UDP/TCP · SIP</text>
+  <text class="mono" x="870" y="226">10000–10200 UDP · audio</text>
+  <text class="mono" x="870" y="246">9490 TCP · panel</text>
+
+  <!-- provider -->
+  <rect class="box" x="30" y="330" width="220" height="130" rx="14"/>
+  <rect class="t-am" x="46" y="348" width="40" height="40" rx="10"/>
+  <g class="ic i-am" transform="translate(54 356)"><path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></g>
+  <text class="bt" x="100" y="366" style="font-size:17px">SIP provider</text>
+  <text class="bs" x="100" y="390">Line 1 … Line N</text>
+  <rect class="pill" x="46" y="410" width="132" height="28" rx="14"/>
+  <text class="pt" x="112" y="429">unlimited lines</text>
+
+  <!-- asterisk -->
+  <rect class="box" x="340" y="330" width="400" height="130" rx="14"/>
+  <rect class="t-ok" x="356" y="348" width="40" height="40" rx="10"/>
+  <g class="ic i-ok" transform="translate(364 356)"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 1.5v3M15 1.5v3M9 19.5v3M15 19.5v3M19.5 9h3M19.5 15h3M1.5 9h3M1.5 15h3"/></g>
+  <text class="bt" x="410" y="366">Asterisk 22 · PJSIP</text>
+  <text class="bs" x="410" y="391">Alpine root file system (chroot)</text>
+  <text class="bs" x="410" y="415">lame → MP3 · Piper → text-to-speech</text>
+  <text class="bs" x="410" y="439">Config files are generated by the panel</text>
+
+  <!-- extensions -->
+  <rect class="box" x="850" y="330" width="220" height="130" rx="14"/>
+  <rect class="t-pr" x="866" y="348" width="40" height="40" rx="10"/>
+  <g class="ic i-pr" transform="translate(874 356)"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></g>
+  <text class="bt" x="920" y="366">Extensions</text>
+  <text class="bs" x="920" y="390">MicroSIP (PC)</text>
+  <text class="bs" x="920" y="412">Mobile phone</text>
+  <text class="bs" x="920" y="434">Desk phone</text>
+
+  <!-- recordings -->
+  <rect class="box" x="340" y="510" width="400" height="66" rx="14"/>
+  <rect class="t-re" x="356" y="523" width="40" height="40" rx="10"/>
+  <g class="ic i-re" transform="translate(364 531)"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></g>
+  <text class="bt" x="410" y="539">SipKayitlari/</text>
+  <text class="bs" x="410" y="562">Shared folder · Line / Year / Month / Day</text>
+
+  <!-- arrows -->
+  <path class="ar" d="M252 205H334" marker-end="url(#ah)"/>
+  <text class="al" x="293" y="195" text-anchor="middle">HTTPS</text>
+
+  <path class="ar" d="M540 266V324" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text class="mono" x="554" y="300">AMI · 127.0.0.1:5038</text>
+
+  <path class="ar" d="M256 395H334" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text class="al" x="295" y="384" text-anchor="middle">SIP · RTP</text>
+
+  <path class="ar" d="M746 395H844" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text class="al" x="795" y="384" text-anchor="middle">SIP · RTP</text>
+
+  <path class="ar" d="M540 462V504" marker-end="url(#ah)"/>
+  <text class="al" x="554" y="489">MP3 / WAV</text>
+</svg>

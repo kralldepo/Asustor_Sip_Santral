@@ -1,0 +1,8 @@
+1.0.1
+- Yeni mod “Çalıp meşgul”: hiçbir dahili seçmeden arayan çalma sesi duyar, süre dolunca (varsayılan 30 sn) hat meşgul döner (486). Yeni eklenen ve toplu içe aktarılan hatların varsayılanı bu mod.
+- “Kimse açmazsa” kuralına “Meşgul ver” seçeneği.
+- Hatlar ekranında toplu işlem: hatları seçip toplu düzenle (mod, anons, dahililer, çalma süresi, cevapsız kuralı, kayıt, hat etiketi), aç, kapat, sil. Geçersiz ayar olursa hiçbir hat değişmez.
+- Arama geçmişinde “Meşgul verildi” sonucu ve süzgeci.
+
+1.0.0
+- İlk sürüm: sınırsız SIP hattı (toplu içe aktarma), hat başına Çaldır / Anons + Çaldır / Sadece anons, cevapsız arama kuralı (kapat, anons, sesli mesaj), tüm aramaları MP3 kaydetme, dahililer (MicroSIP vb.), anonslar (dosya, mikrofon, yazıdan seslendirme - Piper), arama geçmişi, canlı aramalar, CSV/ZIP dışa aktarma, yedekleme, IP engelleme, Türkçe arayüz.

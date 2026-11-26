@@ -1,0 +1,22 @@
+# Build outputs (APK files are published as GitHub release assets)
+/build/
+/dist/
+*.apk
+
+# Runtime data when the app is started from the source folder
+/var/
+/rootfs.tar.gz
+
+# Secrets and local overrides
+.env
+.env.*
+*.pem
+*.key
+
+# Logs, OS and editor files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

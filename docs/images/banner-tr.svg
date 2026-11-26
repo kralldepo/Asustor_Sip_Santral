@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-labelledby="title desc">
+  <title id="title">SIP Santral</title>
+  <desc id="desc">ASUSTOR NAS için SIP santral ve arama kaydı uygulaması</desc>
+  <style>
+    text { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .t { font-size: 60px; font-weight: 800; fill: #ffffff; letter-spacing: -1px; }
+    .s1 { font-size: 23px; font-weight: 600; fill: #d6def0; }
+    .s2 { font-size: 17px; fill: #93a0bb; }
+    .chip rect { fill: #ffffff; fill-opacity: .07; stroke: #ffffff; stroke-opacity: .14; }
+    .chip text { font-size: 15px; font-weight: 600; fill: #c9d4ea; text-anchor: middle; }
+    .card { fill: #ffffff; fill-opacity: .06; stroke: #ffffff; stroke-opacity: .12; }
+    .cn { font-size: 17px; font-weight: 700; fill: #ffffff; }
+    .cs { font-size: 13.5px; fill: #93a0bb; }
+    .bt { font-size: 12.5px; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d2b4c"/>
+      <stop offset="1" stop-color="#0d1422"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".82" cy=".05" r=".75">
+      <stop offset="0" stop-color="#2f6fed" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#2f6fed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx=".1" cy="1" r=".6">
+      <stop offset="0" stop-color="#d33a3a" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#d33a3a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".045"/>
+    </pattern>
+    <linearGradient id="ic" x1="20" y1="8" x2="236" y2="248" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#26385f"/>
+      <stop offset="1" stop-color="#121b30"/>
+    </linearGradient>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity=".45"/>
+    </filter>
+    <clipPath id="clip"><rect width="1200" height="380" rx="28"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect width="1200" height="380" fill="url(#bg)"/>
+    <rect width="1200" height="380" fill="url(#grid)"/>
+    <rect width="1200" height="380" fill="url(#glow)"/>
+    <rect width="1200" height="380" fill="url(#glow2)"/>
+    <!-- sound wave -->
+    <g fill="none" stroke="#7fa6ff" stroke-opacity=".18" stroke-width="3" stroke-linecap="round">
+      <path d="M0 352 C60 352 80 330 110 330 S150 368 180 368 S220 318 250 318 S300 372 330 372 S370 340 400 340 S450 356 480 356 S560 352 620 352"/>
+    </g>
+  </g>
+
+  <!-- app icon -->
+  <g transform="translate(58 66) scale(.78)" filter="url(#sh)">
+    <rect x="8" y="8" width="240" height="240" rx="54" fill="url(#ic)"/>
+    <rect x="8.5" y="8.5" width="239" height="239" rx="53.5" fill="none" stroke="#ffffff" stroke-opacity=".16"/>
+    <g transform="translate(120 136) rotate(-45)" fill="#ffffff">
+      <path d="M-78 -10C-40 22 40 22 78 -10L78 18C40 52 -40 52 -78 18Z"/>
+      <rect x="-100" y="-34" width="52" height="50" rx="18"/>
+      <rect x="48" y="-34" width="52" height="50" rx="18"/>
+    </g>
+    <g fill="none" stroke="#7fa6ff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M112 52L64 100"/>
+      <path d="M64 62V100H102"/>
+    </g>
+    <circle cx="190" cy="190" r="38" fill="#ffffff"/>
+    <circle cx="190" cy="190" r="22" fill="#d33a3a"/>
+  </g>
+
+  <!-- headline -->
+  <text class="t" x="290" y="128">SIP Santral</text>
+  <text class="s1" x="292" y="170">ASUSTOR NAS için SIP santral ve arama kaydı</text>
+  <text class="s2" x="292" y="210">SIP hatlarınızı NAS'a bağlayın: dahilileri çaldırın,</text>
+  <text class="s2" x="292" y="236">anons çalın, her görüşmeyi MP3 olarak kaydedin.</text>
+
+  <!-- chips -->
+  <g class="chip" transform="translate(58 296)">
+    <rect width="124" height="36" rx="18"/><text x="62" y="23.5">Asterisk 22</text>
+  </g>
+  <g class="chip" transform="translate(194 296)">
+    <rect width="164" height="36" rx="18"/><text x="82" y="23.5">Docker gerekmez</text>
+  </g>
+  <g class="chip" transform="translate(370 296)">
+    <rect width="150" height="36" rx="18"/><text x="75" y="23.5">MP3 arama kaydı</text>
+  </g>
+  <g class="chip" transform="translate(532 296)">
+    <rect width="186" height="36" rx="18"/><text x="93" y="23.5">Yazıdan ses (Piper)</text>
+  </g>
+  <g class="chip" transform="translate(730 296)">
+    <rect width="170" height="36" rx="18"/><text x="85" y="23.5">ADM 4.0+ · ARM64</text>
+  </g>
+
+  <!-- line cards -->
+  <g transform="translate(868 46)">
+    <rect class="card" width="290" height="66" rx="14"/>
+    <circle cx="26" cy="33" r="11" fill="#3ccb84" fill-opacity=".22"/>
+    <circle cx="26" cy="33" r="5.5" fill="#3ccb84"/>
+    <text class="cn" x="46" y="29">Satış</text>
+    <text class="cs" x="46" y="50">Kayıtlı · bugün 14 arama</text>
+    <rect x="180" y="11" width="98" height="24" rx="12" fill="#2f6fed" fill-opacity=".28"/>
+    <text class="bt" x="229" y="27.5" fill="#b9ccff">Anons+Çaldır</text>
+  </g>
+  <g transform="translate(868 124)">
+    <rect class="card" width="290" height="66" rx="14"/>
+    <circle cx="26" cy="33" r="11" fill="#3ccb84" fill-opacity=".22"/>
+    <circle cx="26" cy="33" r="5.5" fill="#3ccb84"/>
+    <text class="cn" x="46" y="29">Destek</text>
+    <text class="cs" x="46" y="50">Kayıtlı · bugün 9 arama</text>
+    <rect x="196" y="11" width="82" height="24" rx="12" fill="#2f6fed" fill-opacity=".28"/>
+    <text class="bt" x="237" y="27.5" fill="#b9ccff">Çaldır</text>
+  </g>
+  <g transform="translate(868 202)">
+    <rect class="card" width="290" height="66" rx="14"/>
+    <circle cx="26" cy="33" r="11" fill="#3ccb84" fill-opacity=".22"/>
+    <circle cx="26" cy="33" r="5.5" fill="#3ccb84"/>
+    <text class="cn" x="46" y="29">Fuar standı</text>
+    <text class="cs" x="46" y="50">Kayıtlı · bugün 3 arama</text>
+    <rect x="172" y="11" width="106" height="24" rx="12" fill="#8b6cf0" fill-opacity=".28"/>
+    <text class="bt" x="225" y="27.5" fill="#d9ccff">Çalıp meşgul</text>
+  </g>
+  <g transform="translate(1004 286)">
+    <rect width="154" height="34" rx="17" fill="#d33a3a" fill-opacity=".18" stroke="#d33a3a" stroke-opacity=".45"/>
+    <circle cx="22" cy="17" r="6" fill="#ff5d5d"/>
+    <text x="38" y="22.5" font-size="14" font-weight="700" fill="#ffc9c9">Kayıt · 01:24</text>
+  </g>
+</svg>

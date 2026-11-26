@@ -1,0 +1,3 @@
+SIP Santral: Sınırsız SIP hattınızı NAS'a bağlar. Her hat için gelen aramada ne olacağını seçersiniz: dahilileri çaldır (MicroSIP, cep, masa telefonu), önce anons çal sonra çaldır, ya da sadece anons (ardından sesli mesaj). Anonsları dosyadan, mikrofondan ya da yazıdan (Türkçe/Almanca/İngilizce ses) üretir. Gelen tüm aramaları kaydeder (MP3), arama geçmişi, canlı aramalar ve web arayüzünden dinleme/indirme sunar. Asterisk 22 tabanlıdır; Docker gerekmez.
+
+SIP Santral connects your SIP lines to the NAS: ring your phones, play an announcement first, or announcement only with voicemail. Records every incoming call (MP3) with call history, live calls and playback in the browser. Based on Asterisk 22; no Docker needed.
